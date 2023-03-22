@@ -1,6 +1,6 @@
 # Vue3-Admin 搭建过程
 
-## 1. 搭建一个Vite + Vue + Ts 项目
+## 1. 搭建一个 Vite + Vue + Ts 项目
 
 Vite 可以通过附加的命令行选项直接指定项目名称和你想要使用的模板。例如，要构建一个 Vite + Vue + Ts 项目，运行:
 
@@ -22,9 +22,9 @@ pnpm create vite Vue3-Admin -- --template vue-ts
 
 ## 2. 项目规范
 
-### 2.1 集成editorconfig
+### 2.1 集成 editorconfig
 
-editorconfig是用于跨不同的编辑器和IDE为多个开发人员维护一致的编码风格的配置文件。
+editorconfig 是用于跨不同的编辑器和 IDE 为多个开发人员维护一致的编码风格的配置文件。
 
 根目录下创建文件`.editorconfig`
 
@@ -49,16 +49,16 @@ trim_trailing_whitespace = false # 关闭末尾空格修剪
 
 **注意：**使用`VScode`开发的话，需要下载插件 [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
-### 2.2 集成Eslint + prettier
+### 2.2 集成 Eslint + prettier
 
-#### 2.2.1 安装EsLint
+#### 2.2.1 安装 EsLint
 
 ```javascript
 # 1. 安装EsLint
 yarn add -D eslint
 ```
 
-#### 2.2.2 初始化配置EsLint
+#### 2.2.2 初始化配置 EsLint
 
 ```javascript
 # 2. 初始化配置EsLint
@@ -69,33 +69,33 @@ npm init @eslint/config
 
 ```javascript
 # 2.1 选择模式(选择To check syntax and find problems)
-? How would you like to use ESLint? … 
+? How would you like to use ESLint? …
   To check syntax only
 ❯ To check syntax and find problems
   To check syntax, find problems, and enforce code style
 
 # 2.2 选择语言(选择JavaScript modules (import/export))
-? What type of modules does your project use? … 
+? What type of modules does your project use? …
 ❯ JavaScript modules (import/export)
   CommonJS (require/exports)
   None of these
 
 # 2.3 选择框架(选择Vue.js)
-? Which framework does your project use? … 
+? Which framework does your project use? …
   React
 ❯ Vue.js
   None of these
 
 # 2.4 是否使用ts(选择Yes)
 ? Does your project use TypeScript? › Yes
-  
+
 # 2.5 代码在哪运行(用空格选中 Browser+Node)
 ? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
 ✔ Browser
 ✔ Node
 
 # 2.6 您希望配置文件是什么格式(选择JavaScript)
-? What format do you want your config file to be in? … 
+? What format do you want your config file to be in? …
 ❯ JavaScript
   YAML
   JSON
@@ -104,7 +104,7 @@ npm init @eslint/config
 ? Would you like to install them now? › Yes
 
 # 2.8 您要使用哪个软件包管理器？ (选择yarn)
-? Which package manager do you want to use? … 
+? Which package manager do you want to use? …
   npm
 ❯ yarn
   pnpm
@@ -114,30 +114,21 @@ npm init @eslint/config
 
 ```javascript
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "vue",
-        "@typescript-eslint"
-    ],
-    "rules": {
-    }
-}
+	env: {
+		browser: true,
+		es2021: true,
+		node: true
+	},
+	extends: ["eslint:recommended", "plugin:vue/vue3-essential", "plugin:@typescript-eslint/recommended"],
+	overrides: [],
+	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		ecmaVersion: "latest",
+		sourceType: "module"
+	},
+	plugins: ["vue", "@typescript-eslint"],
+	rules: {}
+};
 ```
 
 #### 2.2.3 安装`vite-plugin-eslint`
@@ -152,17 +143,14 @@ yarn add -D vite-plugin-eslint
 修改`vite.config.ts`
 
 ```javascript
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    eslintPlugin()
-  ],
-})
+	plugins: [vue(), eslintPlugin()]
+});
 ```
 
 #### 2.2.4 安装`parser`
@@ -347,7 +335,7 @@ public/*
 "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
 ```
 
-### 2.4 集成`husky` + `lint-staged` + `commitlint` +`commitizen`  + `cz-git`
+### 2.4 集成`husky` + `lint-staged` + `commitlint` +`commitizen` + `cz-git`
 
 #### 2.4.1 安装`lint-staged`
 
@@ -361,9 +349,9 @@ yarn add -D lint-staged
 "lint:lint-staged": "lint-staged"
 ```
 
-根目下创建`lint-staged.config.cjs`
+根目下创建`.lintstagedrc.json`
 
-```javascript
+```json
 module.exports = {
 	"*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
 	"{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": ["prettier --write--parser json"],
@@ -393,6 +381,14 @@ yarn run prepare
 ```
 
 会在项目根目录下生成一个`.husky`文件夹，在其下添加一个文件，名称为相关 `git hooks` 的名称。这里我们配置：`pre-commit`
+
+命令生成 pre-commit
+
+```shell
+npx husky add .husky/pre-commit "npm run lint:lint-staged"
+```
+
+文件内容如下：
 
 ```javascript
 #!/usr/bin/env sh
@@ -456,7 +452,7 @@ module.exports = {
 
 #### 2.4.4 安装`commitlint`
 
-如果我们按照cz来规范了提交风格，但是依然有同事通过 `git commit` 按照不规范的格式提交应该怎么办呢？我们可以通过commitlint来限制提交
+如果我们按照 cz 来规范了提交风格，但是依然有同事通过 `git commit` 按照不规范的格式提交应该怎么办呢？我们可以通过 commitlint 来限制提交
 
 ```javascript
 yarn add -D @commitlint/config-conventional @commitlint/cli
@@ -628,6 +624,14 @@ module.exports = {
 
 `.husky`目录下创建`commit-msg`文件
 
+命令生成
+
+```shell
+npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+```
+
+文件如下：
+
 ```javascript
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -635,10 +639,12 @@ module.exports = {
 npx --no-install commitlint --edit $1
 ```
 
+如果最后没有`$1`，手动添加一下
+
 `package.json`加入命令：
 
 ```javascript
 "commit": "git pull && git add -A && git-cz && git push"
 ```
 
-之后提交使用`yarn run commit`
+之后提交使用`yarn commit`
