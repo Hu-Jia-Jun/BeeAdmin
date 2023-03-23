@@ -14,7 +14,7 @@
 		"lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
 		"lint:lint-staged": "lint-staged",
 		"prepare": "husky install",
-		"commit": "git pull && git add -A && git-cz",
+		"commit": "git pull && git add -A && git-cz && git push",
 		"clean:cache": "rm -rf node_modules && rm -rf .eslintcache && pnpm install",
 		"preinstall": "npx only-allow pnpm"
 	},
