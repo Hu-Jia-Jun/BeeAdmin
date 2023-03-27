@@ -1,12 +1,26 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
+import { resolve } from "path";
+import svgLoader from "vite-svg-loader";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	resolve: {
+		// 设置alias别名 https://cn.vitejs.dev/config/shared-options.html#resolve-alias
+		alias: {
+			"@": resolve(__dirname, "./src")
+		}
+	},
 	plugins: [
 		vue(),
-		// * EsLint 报错信息显示在浏览器界面上
+		// svg组件化 https://www.npmjs.com/package/vite-svg-loader
+		svgLoader({
+			svgoConfig: {
+				multipass: true
+			}
+		}),
+		// EsLint 报错信息显示在浏览器界面上
 		eslintPlugin()
 	]
 });
