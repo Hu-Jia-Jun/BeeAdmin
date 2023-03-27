@@ -15,7 +15,7 @@
 		@apply flex justify-between items-center;
 	}
 
-  .flex-sc {
+	.flex-sc {
 		@apply flex justify-start items-center;
 	}
 
