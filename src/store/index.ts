@@ -1,5 +1,5 @@
 import { defineStore, createPinia } from "pinia";
-import piniaPersisteConfig from "@/config/piniaPersist";
+import piniaPersisteConfig from "@/utils/piniaPersist/piniaPersist";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 // GlobalStore实体

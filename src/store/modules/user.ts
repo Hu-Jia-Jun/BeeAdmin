@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { UserState } from "@/store/interface";
-import piniaPersistConfig from "@/config/piniaPersist";
+import piniaPersistConfig from "@/utils/piniaPersist/piniaPersist";
 
 // UserStore
 export const UserStore = defineStore({

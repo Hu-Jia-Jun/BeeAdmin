@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { staticRouter } from "@/router/modules/staticRouter";
 import { UserStore } from "@/store/modules/user";
 import { AuthStore } from "@/store/modules/auth";
-import NProgress from "@/utils/process";
+import NProgress from "@/utils/NProgress";
 import { LOGIN_URL, ROUTER_WHITE_LIST } from "@/config/config";
 
 export const router = createRouter({
