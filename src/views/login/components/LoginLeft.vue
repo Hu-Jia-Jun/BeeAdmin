@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import LogoIcon from "@/assets/svg/logo.svg?component";
-import { VITE_GLOB_APP_APP_DESCRIPTION } from "@/config/config";
+import { VITE_GLOB_APP_APP_DESCRIPTION } from "@/config/enums";
 </script>
 
 <template>
@@ -27,7 +27,6 @@ import { VITE_GLOB_APP_APP_DESCRIPTION } from "@/config/config";
 		content: "";
 		background-color: transparent;
 		border: 4px solid hsl(0deg 0% 100% / 30%);
-		border-radius: 50%;
 		border-radius: 50%;
 	}
 }

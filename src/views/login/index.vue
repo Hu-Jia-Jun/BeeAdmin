@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup lang="ts" name="Login">
 import LoginLeft from "./components/LoginLeft.vue";
-import LoginByAccount from "./components/LoginByAccount.vue";
+import LoginByAccount from "./components/LoginByUserName.vue";
 </script>
 
 <template>
@@ -15,6 +15,4 @@ import LoginByAccount from "./components/LoginByAccount.vue";
 	</div>
 </template>
 
-<style scoped lang="scss">
-@import "./login.scss";
-</style>
+<style scoped lang="scss"></style>

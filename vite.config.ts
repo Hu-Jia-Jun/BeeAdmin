@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
 import { resolve } from "path";
 import svgLoader from "vite-svg-loader";
+import { viteMockServe } from "vite-plugin-mock";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +20,10 @@ export default defineConfig({
 			svgoConfig: {
 				multipass: true
 			}
+		}),
+		// mock支持
+		viteMockServe({
+			mockPath: "mock"
 		}),
 		// EsLint 报错信息显示在浏览器界面上
 		eslintPlugin()

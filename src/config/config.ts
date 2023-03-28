@@ -1,6 +1,8 @@
-// app description
-export const VITE_GLOB_APP_APP_DESCRIPTION: string[] = [
-	"简化操作流程，提高管理效率",
-	"快速数据处理，提供实时预警",
-	"保证信息安全，系统可靠性高"
-];
+// * 首页地址（默认）
+export const HOME_URL: string = "/home/index";
+
+// * 登录页地址（默认）
+export const LOGIN_URL: string = "/login";
+
+// * 路由白名单地址（必须是本地存在的路由 staticRouter.ts）
+export const ROUTER_WHITE_LIST: string[] = [];
