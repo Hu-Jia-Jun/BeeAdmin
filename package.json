@@ -14,10 +14,10 @@
 		"lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
 		"lint:lint-staged": "lint-staged",
 		"prepare": "husky install",
-		"commit": "git pull && git add -A && git-cz && standard-version && git push --follow-tags origin main",
+		"commit": "git pull && git add -A && git-cz && release-it",
 		"clean:cache": "rm -rf node_modules && rm -rf .eslintcache && pnpm install",
 		"preinstall": "npx only-allow pnpm",
-		"release": "standard-version"
+		"release": "release-it"
 	},
 	"dependencies": {
 		"@element-plus/icons-vue": "^2.1.0",
@@ -34,6 +34,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.5.0",
 		"@commitlint/config-conventional": "^17.4.4",
+		"@release-it/conventional-changelog": "^5.1.1",
 		"@types/js-md5": "^0.7.0",
 		"@types/node": "^18.15.5",
 		"@types/nprogress": "^0.2.0",
