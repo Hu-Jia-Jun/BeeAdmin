@@ -11,13 +11,14 @@
 - 使用 `Vue3` + `typescript` + `vite4` 开发
 - 使用 `Prettier` 格式化代码，使用 `Eslint`、`Stylelint` 校验代码规范
 - 使用 `husky`、`lint-staged`、`commitizen`、`cz-git`、`commitlint` 规范代码及`Git`提交信息
+- 使用 `release-it` 自动化生产`log`日志
 
 ## 安装
 
 - 获取代码
 
 ```bash
-git clone https://github.com/Hu-Jia-Jun/Vue3-Admin.git
+git clone https://github.com/Hu-Jia-Jun/BeeAdmin.git
 ```
 
 - 安装
