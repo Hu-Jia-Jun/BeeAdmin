@@ -1,3 +1,9 @@
+## [0.0.8](https://github.com/Hu-Jia-Jun/BeeAdmin/compare/v0.0.7...v0.0.8) (2023-03-28)
+
+### 🔧 Continuous Integration | CI 配置
+
+- 使用 release-it 替换 standard version ([9e097f3](https://github.com/lpreterite/datagent/commit/9e097f38c54b630554c282fe24bfb2be7d77b55a))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
