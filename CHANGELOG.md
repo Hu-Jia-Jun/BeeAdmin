@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Hu-Jia-Jun/BeeAdmin/compare/v0.0.4...v0.0.5) (2023-03-28)
+
+### Features
+
+- 加入 VueRouter mockjs pinia axios nprogress js-md5 ([381551e](https://github.com/Hu-Jia-Jun/BeeAdmin/commit/381551e824b5ddf5c05cffc544c65b260fa8fbeb))
+
 ### [0.0.4](https://github.com/Hu-Jia-Jun/BeeAdmin/compare/v0.0.3...v0.0.4) (2023-03-27)
 
 ### [0.0.3](https://github.com/Hu-Jia-Jun/BeeAdmin/compare/v0.0.2...v0.0.3) (2023-03-27)
